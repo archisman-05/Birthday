@@ -1,0 +1,23 @@
+body {
+    background: url('map.jpg') no-repeat center center/cover;
+    font-family: 'IM Fell English SC', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background-color: black;
+    overflow: hidden;
+}
+.vid{
+    width: 700px;
+    height: 500px;
+}
+@media (max-width: 600px) {
+    .vid {
+        font-size: 1.5em;
+    }
+}

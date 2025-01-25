@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind The Scenes!</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <div class="burst" id="burstEffect"></div>
+    <p class="instructions">Speak the spell for "light"</p>
+    <h1 class="alho">lumos!</h1>
+    <script>
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'en-US';
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        function startRecognition() {
+            recognition.start();
+            console.log("Listening for 'lumos'...");
+        }
+
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript.trim().toLowerCase();
+            console.log("Recognized: ", transcript);
+            if (transcript.includes("lumos")) {
+                document.getElementById("burstEffect").style.opacity = '1';
+                document.querySelector(".instructions").style.display = 'none';
+                document.querySelector(".alho").style.display = 'block';
+                setTimeout(() => {
+                    window.location.href = 'letter.html';
+                }, 2500);
+            }
+        };
+
+        recognition.onerror = function(event) {
+            console.error("Speech recognition error: ", event.error);
+        };
+
+        recognition.onend = function() {
+            console.log("Recognition ended. Restarting...");
+            recognition.start();
+        };
+
+        startRecognition();
+    </script>

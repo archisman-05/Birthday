@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Bhoomi!</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div class="map-trail"></div>
+    <div class="container">
+        <h1 class="title">
+            <div class=t1>Happy Birthday to the best girlfriend ever,</div>
+            <div class=t2>Bhoomi! 🎂</div>
+        </h1>
+        <div class="photo-frame">
+            <img id="photo" src="img1.JPG" alt="Birthday Girl">
+            <img id="photo" src="img3.JPG" alt="Birthday Girl">
+            <img id="photo" src="img4.JPG" alt="Birthday Girl">
+            <img id="photo" src="img5.JPG" alt="Birthday Girl">
+            <img id="photo" src="img6.JPG" alt="Birthday Girl">
+            <img id="photo" src="img7.JPG" alt="Birthday Girl">
+            <img id="photo" src="img8.JPG" alt="Birthday Girl">
+            <img id="photo" src="img9.JPG" alt="Birthday Girl">
+            <img id="photo" src="img18.JPG" alt="Birthday Girl">
+            <img id="photo" src="img11.JPG" alt="Birthday Girl">
+            <img id="photo" src="img14.JPG" alt="Birthday Girl">
+            <img id="photo" src="img15.JPG" alt="Birthday Girl">
+            <img id="photo" src="img16.JPG" alt="Birthday Girl">
+            <img id="photo" src="img17.JPG" alt="Birthday Girl">
+        </div>
+        <p class="message">Wishing you a magical year ahead! Always Stay happy and keep on Smiling 🪄✨</p>
+    </div>
+    <script>
+        const photos = ["img1.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", "img7.jpg", "img8.jpg", "img9.jpg", "img18.jpg", "img11.jpg", "img14.jpg", "img15.jpg", "img16.jpg"];
+        let index = 0;
+        function changePhoto() {
+            index = (index + 1) % photos.length;
+            let photoElement = document.getElementById("photo");
+            photoElement.style.transform = 'translateX(-100%)';
+            setTimeout(() => {
+                photoElement.src = photos[index];
+                photoElement.style.transform = 'translateX(0)';
+            }, 500);
+        }
+        setInterval(changePhoto, 3000);
+
+        const characters = ["Harry Potter", "Hermione Granger", "Ron Weasley", "Albus Dumbledore", "Severus Snape", "Lord Voldemort", "Sirius Black", "Minerva McGonagall", "Rubeus Hagrid", "Neville Longbottom", "Draco Malfoy", "Ginny Weasley", "Bellatrix Lestrange", "Luna Lovegood", "Remus Lupin"];
+        function createFloatingNames() {
+            characters.forEach(name => {
+                let nameElement = document.createElement("div");
+                nameElement.classList.add("character-name");
+                nameElement.innerText = name;
+                nameElement.style.left = Math.random() * 90 + "vw";
+                nameElement.style.top = Math.random() * 90 + "vh";
+                nameElement.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                document.body.appendChild(nameElement);
+            });
+        }
+        createFloatingNames();
+    </script>
+</body>
+
+</html>

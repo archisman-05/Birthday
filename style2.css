@@ -1,0 +1,50 @@
+body {
+    background: url('hogwarts.jpg') no-repeat center center/cover;
+    font-family: 'IM Fell English SC', serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    overflow: hidden;
+}
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.menu-title {
+    font-size: 3em;
+    text-shadow: 3px 3px 6px #000000;
+}
+.menu-options {
+    margin-top: 30px;
+}
+.option {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    margin: 15px;
+    font-size: 1.5em;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.option:hover {
+    background: #ecd9a6;
+    color: rgb(219, 164, 164);
+    transform: scale(1.1);
+}
+.wand-effect {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #e3e3ff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle 0.5s linear infinite;
+}
+@keyframes sparkle {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(3); opacity: 0; }
+}

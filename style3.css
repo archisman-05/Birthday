@@ -1,0 +1,50 @@
+body {
+    background: url('hogwarts.jpg') no-repeat center center/cover;
+    font-family: 'IM Fell English SC', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+.postcard {
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(255, 235, 205, 0.9);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid #8B4513;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.left-side {
+    width: 40%;
+    padding-right: 10px;
+}
+.left-side img {
+    width: 100%;
+    height: auto;
+}
+.address {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+.right-side {
+    width: 60%;
+    border-left: 2px dashed #8B4513;
+    padding-left: 10px;
+}
+@media (max-width: 600px) {
+    .postcard {
+        flex-direction: column;
+        text-align: center;
+    }
+    .left-side, .right-side {
+        width: 100%;
+        border-left: none;
+        padding: 0;
+    }
+}
+.logo{
+    height:100px;
+}

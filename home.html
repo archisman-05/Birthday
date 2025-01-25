@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's 5th February!</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="menu-container">
+        <h1 class="menu-title">Choose Your Magical Path</h1>
+        <div class="menu-options">
+            <div class="option" onclick="location.href='lumos.html'">The Letter</div>
+            <div class="option" onclick="location.href='Expecto.html'">The Wish</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            let wand = document.createElement("div");
+            wand.classList.add("wand-effect");
+            wand.style.left = `${e.pageX}px`;
+            wand.style.top = `${e.pageY}px`;
+            document.body.appendChild(wand);
+            setTimeout(() => { wand.remove(); }, 500);
+        });
+    </script>
