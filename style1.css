@@ -62,3 +62,45 @@ body {
     color: #ffffff;
     font-size: 1.9rem;
 }
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8em;
+    }
+
+    .message {
+        font-size: 1.2em;
+    }
+
+    .photo-frame {
+        width: 90%;
+        max-width: 320px;
+        aspect-ratio: 4 / 5;
+        margin-top: 50vh;
+    }
+
+    .character-name {
+        font-size: 1em;
+        animation: floatNames 6s infinite alternate ease-in-out;
+    }
+}
+
+/* 📱 Small Mobile Screens */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5em;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+
+    .photo-frame {
+        width: 95%;
+        max-width: 280px;
+        aspect-ratio: 4 / 5;
+    }
+
+    .character-name {
+        font-size: 0.9em;
+    }
+}
